@@ -54,7 +54,7 @@ class _HomeState extends State<Home> {
             Stack(
               alignment: Alignment.center,
               children: <Widget>[
-                CircleAvatar(radius: 30, backgroundColor: Colors.black),
+                CircleAvatar(radius: 40, backgroundColor: Colors.white),
                 CircleAvatar(
                   radius: 29.5,
                   backgroundColor: Colors.orangeAccent,

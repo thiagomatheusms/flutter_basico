@@ -12,6 +12,8 @@ class HomeLogin extends StatefulWidget {
 }
 
 class _HomeLoginState extends State<HomeLogin> {
+  bool remember = true;
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -40,13 +42,20 @@ class _HomeLoginState extends State<HomeLogin> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              FlatButton(
-                                  onPressed: () {},
-                                  child: Text(
-                                    "Criar conta",
-                                    style:
-                                        TextStyle(color: Colors.orangeAccent),
-                                  )),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: <Widget>[
+                                  Text("Lembrar de mim"),
+                                  Checkbox(
+                                      value: remember,
+                                      activeColor: Colors.orangeAccent,
+                                      onChanged: (bool isRemember) {
+                                        setState(() {
+                                          remember = isRemember;
+                                        });
+                                      }),
+                                ],
+                              ),
                               SizedBox(
                                   width: size.width / 2,
                                   child: RaisedButton(
@@ -83,10 +92,26 @@ class _HomeLoginState extends State<HomeLogin> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: <Widget>[
+                                  Text("Lembrar de mim"),
+                                  Checkbox(
+                                      value: remember,
+                                      activeColor: Colors.orangeAccent,
+                                      onChanged: (bool isRemember) {
+                                        setState(() {
+                                          remember = isRemember;
+                                        });
+                                      }),
+                                ],
+                              ),
                               CupertinoButton(
-                                  child: Text("Criar conta"), onPressed: () {}),
-                              CupertinoButton.filled(
-                                  child: Text("Entrar"),
+                                  child: Text(
+                                    "Entrar",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                  color: Colors.orangeAccent,
                                   onPressed: () {
                                     Navigator.pushReplacement(
                                         context,
