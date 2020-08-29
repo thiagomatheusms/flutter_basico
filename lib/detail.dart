@@ -18,7 +18,7 @@ class Detail extends StatelessWidget {
             width: size.width,
             child: Card(
               child: Container(
-                height: 200,
+                height: 250,
                 child: Center(
                   child: Column(
                     children: <Widget>[
@@ -31,12 +31,8 @@ class Detail extends StatelessWidget {
                           child: Column(
                             children: <Widget>[
                               CircleAvatar(
-                                radius: 29.5,
-                                backgroundColor: Colors.white,
-                                child: Text("TM",
-                                    style: TextStyle(
-                                        color: Colors.orange, fontSize: 20)),
-                              ),
+                                  radius: 48,
+                                  backgroundImage: NetworkImage(contact.photo)),
                               SizedBox(
                                 height: 20,
                               ),
@@ -50,7 +46,7 @@ class Detail extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(16.0),
+                        padding: const EdgeInsets.all(24.0),
                         child: Text("${contact.telephone}",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 20)),
